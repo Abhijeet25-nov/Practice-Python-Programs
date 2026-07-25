@@ -103,8 +103,30 @@ VALUES
 SELECT * FROM DEPARTMENT D WHERE Dept_name="HR";
 SELECT * FROM ACCOUNTS;
 
-SELECT E.emp_id, E.Name_emp, E.EMAIL, E.City, D.DEPT_ID, D.OFFICE_CITY, A.Salary_id, A.Salary_amt FROM EMPDATA E 
+SELECT E.emp_id, E.Name_emp, E.EMAIL, E.City, E.State, D.DEPT_ID, D.OFFICE_CITY, A.Salary_id, A.Salary_amt FROM EMPDATA E 
 LEFT JOIN DEPARTMENT D ON E.emp_id=D.emp_id
 LEFT JOIN ACCOUNTS A ON E.emp_id=A.emp_id;
+
+SELECT * FROM EMPDATA WHERE State='UP'; 
+
+SELECT Name_emp, City, Age FROM EMPDATA WHERE age>22;
+SELECT E.emp_id, E.Name_emp, D.Dept_name From DEPARTMENT D JOIN EMPDATA E ON E.emp_id=D.emp_id WHERE Dept_name="HR";
+
+SELECT E.emp_id, E.Name_emp, D.Dept_name, D.OFFICE_CITY , A.Salary_amt From DEPARTMENT D JOIN EMPDATA E ON E.emp_id=D.emp_id WHERE OFFICE_CITY="Bangalore";
+SELECT E.emp_id, 
+	   E.Name_emp, 
+       D.Dept_name, 
+       D.OFFICE_CITY , 
+       A.Salary_amt 
+From DEPARTMENT D 
+JOIN EMPDATA E ON E.emp_id=D.emp_id 
+JOIN ACCOUNTS A ON E.emp_id=A.emp_id
+WHERE OFFICE_CITY="Bangalore";
+
+SELECT * FROM ACCOUNTS A LEFT JOIN EMPDATA E ON A.emp_id=E.emp_id AND E.State='UP';
+
+SELECT Dept_name , COUNT(*) AS No_of_Emp FROM DEPARTMENT GROUP BY Dept_name;
+
+
 
 
