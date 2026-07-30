@@ -2,7 +2,6 @@ import turtle
 import math
 import random
 
-
 screen = turtle.Screen()
 
 screen.bgcolor("black")
