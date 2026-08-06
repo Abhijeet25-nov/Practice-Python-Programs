@@ -6,7 +6,7 @@ screen = turtle.Screen()
 
 screen.bgcolor("black")
 t= turtle.Turtle()
-t.speed(360)
+t.speed(10000)
 t.hideturtle()
 t.pensize(1)
 colors = ["red","blue","pink","lime","green","magenta","orange"] 
